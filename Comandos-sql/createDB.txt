@@ -1,0 +1,9 @@
+CREATE TABLE carros_fipe(
+    cod_fipe VARCHAR(10),
+    mes_referencia VARCHAR(40) NOT NULL,
+    marca VARCHAR(50) NOT NULL,
+    modelo VARCHAR(70) NOT NULL,
+    ano_modelo VARCHAR(20) NOT NULL,
+    preco_medio FLOAT NOT NULL,
+    PRIMARY KEY (cod_fipe, mes_referencia)
+);
