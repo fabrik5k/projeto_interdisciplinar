@@ -38,9 +38,13 @@ def analisar():
     modelo = request.form['modelo']
     ano_modelo = request.form['ano_modelo']
     print(f'marca: {marca}, modelo:{modelo}, ano_modelo:{ano_modelo}')
-    image_base64, dataFrame = plot_unitario(marca, modelo, ano_modelo)
-    variacao_media(dataFrame)
-    return render_template('analiseDados.html', image_base64=image_base64)
+    image_base64, dataFrame, tendencia_porcentagem = plot_unitario(marca, modelo, ano_modelo)
+    previsao, preco_final = variacao_media(dataFrame)
+    return render_template('analiseDados.html',
+                           image_base64=image_base64,
+                           previsao=previsao,
+                           preco_final=preco_final,
+                           tendencia_porcentagem=tendencia_porcentagem)
 
 
 @app.route('/analiseComparativa')

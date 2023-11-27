@@ -12,6 +12,25 @@
         .box {
             margin-bottom: 20px;
         }
+        .input-style {
+            padding: .375rem .75rem;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            display: block;
+            width: 100%;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        .red-text {
+            color: red;
+        }
+
+        .blue-text {
+            color: blue;
+        }
     </style>
 </head>
 <body>
@@ -30,7 +49,9 @@
             <div class="col-md-4 box">
                 <div class="form-group">
                     <label for="valorAtual">Valor Atual do Carro</label>
-                    <input type="text" class="form-control" id="valorAtual" placeholder="R$ 00,00">
+                    <span class="input-style" id="valorAtual">
+                        R$ {{ preco_final }}
+                    </span>
                 </div>
             </div>
 
@@ -38,7 +59,9 @@
             <div class="col-md-4 box">
                 <div class="form-group">
                     <label for="previsaoValor">Previsão do Valor para o Próximo Mês</label>
-                    <input type="text" class="form-control" id="previsaoValor" placeholder="R$ 00,00">
+                    <span class="input-style" id="previsaoValor">
+                        R$ {{ previsao }}
+                    </span>
                 </div>
             </div>
 
@@ -46,7 +69,9 @@
             <div class="col-md-4 box">
                 <div class="form-group">
                     <label for="tendenciaValorizacao">Tendência de Valorização (%)</label>
-                    <input type="text" class="form-control" id="tendenciaValorizacao" placeholder="%">
+                    <span class="input-style {{ 'red-text' if tendencia_porcentagem < 0 else 'blue-text' }}" id="tendenciaValorizacao">
+                        {{ '{:.2f}'.format(tendencia_porcentagem) }}%
+                    </span>
                 </div>
             </div>
         </div>
