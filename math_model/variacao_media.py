@@ -2,6 +2,7 @@ import numpy as np
 
 
 def variacao_media(dataFrame):
+    print(dataFrame['preco_medio'])
     preco_inicial_str = dataFrame['preco_medio'][0]  # Supondo que seja 'R$ 3600,45'
     preco_final_str = dataFrame['preco_medio'][len(dataFrame['preco_medio'])-1]  # Supondo que seja 'R$ 3600,45'
 

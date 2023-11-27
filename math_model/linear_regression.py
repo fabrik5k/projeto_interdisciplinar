@@ -15,7 +15,7 @@ def linear_regression(y):
             return 0
         return 2 * (m * x + b - y[x]) + derivada_custo_b(x - 1)
 
-    for i in range(100000):
+    for i in range(1000000):
         m = m - taxa_de_aprendizagem * derivada_custo_m(len(y) - 1)  # derivada_custo_m(len(y)-1)
         b = b - taxa_de_aprendizagem * derivada_custo_b(len(y) - 1)
 

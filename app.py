@@ -28,16 +28,16 @@ def carregar_analise_unitaria():
     modelos_json = retornar_modelos()
     modelos_json = json.loads(modelos_json)
     modelos = [v['modelo'] for v in modelos_json.values()]
-    print(modelos)
     #modelos = modelos_json['modelo']
     return render_template('analiseUnitaria.html', modelos=modelos)
 
 
 @app.route('/analisar', methods=['POST'])
 def analisar():
-    marca = request.form['marca']
+    marca = 'Fiat'
     modelo = request.form['modelo']
     ano_modelo = request.form['ano_modelo']
+    print(f'marca: {marca}, modelo:{modelo}, ano_modelo:{ano_modelo}')
     image_base64, dataFrame = plot_unitario(marca, modelo, ano_modelo)
     variacao_media(dataFrame)
     return render_template('analiseDados.html', image_base64=image_base64)
