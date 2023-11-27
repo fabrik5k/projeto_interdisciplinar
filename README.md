@@ -5,6 +5,10 @@ Fizemos esse projeto por conta do dificil acesso aos dados da tabela fipe ao lon
 Isso porque o site da Fipe nao disponibiliza uma api para coleta destes dados, tornando-se dificil o acesso a analise dos mesmos
 Buscamos a facilidade no acesso a informação
 
+Funcionalidades:
+Analise unitaria - Analise de um unico carro
+Analise comparativa - Analise de dois ou mais carros
+
 Ferramentas:
 Para armazenar os dados do projeto utilizamos o PostgreSQL 
 Para rodar a aplicação utilizamos python e seu micro-framework flask
