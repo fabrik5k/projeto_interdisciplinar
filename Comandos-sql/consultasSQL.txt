@@ -1,0 +1,4 @@
+SELECT marca FROM carros_fipe GROUP BY marca --Selecionar todas as marcas dos carros
+SELECT * FROM carros_fipe WHERE cod_fipe = '006' --Selecionar todos os meses referencia de um carrro onde o codigo fipe é '006'
+SELECT ano_modelo FROM carros_fipe WHERE modelo = '{ano_modelo}' GROUP BY ano_modelo --Selecionar todos os anos de um modelo do carro ano_modelo
+SELECT modelo FROM carros_fipe GROUP BY modelo --Selecionar todos os modelos
