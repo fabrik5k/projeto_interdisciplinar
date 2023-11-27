@@ -1,0 +1,23 @@
+INSERT INTO carros_fipe (cod_fipe, mes_referencia, marca, modelo, ano_modelo, preco_medio) 
+VALUES ('009', 'Janeiro-2023', 'Fiat', 'Punto', '2013', 25000.00);
+
+INSERT INTO carros_fipe (cod_fipe, mes_referencia, marca, modelo, ano_modelo, preco_medio) 
+VALUES ('006', 'Janeiro-2023', 'Fiat', 'Punto', '2012', 25000.00);
+
+INSERT INTO carros_fipe (cod_fipe, mes_referencia, marca, modelo, ano_modelo, preco_medio) 
+VALUES ('006', 'Fevereiro-2023', 'Fiat', 'Punto', '2012', 24900.00);
+
+INSERT INTO carros_fipe (cod_fipe, mes_referencia, marca, modelo, ano_modelo, preco_medio) 
+VALUES ('006', 'Março-2023', 'Fiat', 'Punto', '2012', 24800.00);
+
+INSERT INTO carros_fipe (cod_fipe, mes_referencia, marca, modelo, ano_modelo, preco_medio) 
+VALUES ('006', 'Abril-2023', 'Fiat', 'Punto', '2012', 24700.00);
+
+INSERT INTO carros_fipe (cod_fipe, mes_referencia, marca, modelo, ano_modelo, preco_medio) 
+VALUES ('006', 'Maio-2023', 'Fiat', 'Punto', '2012', 24600.00);
+
+INSERT INTO carros_fipe (cod_fipe, mes_referencia, marca, modelo, ano_modelo, preco_medio) 
+VALUES ('007', 'Janeiro-2023', 'Fiat', 'Palio', '2012', 25000.00);
+
+INSERT INTO carros_fipe (cod_fipe, mes_referencia, marca, modelo, ano_modelo, preco_medio) 
+VALUES ('007', 'Fevereiro-2023', 'Fiat', 'Palio', '2012', 24900.00);
