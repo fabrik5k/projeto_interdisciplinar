@@ -4,6 +4,33 @@
     <meta charset="UTF-8">
     <title>CPC - Analise Comparativa</title>
     <link rel="stylesheet" href="static/bootstrap.css">
+    <style>
+        .container {
+            padding-top: 20px;
+        }
+        .box {
+            margin-bottom: 20px;
+        }
+        .input-style {
+            padding: .375rem .75rem;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            display: block;
+            width: 100%;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        .red-text {
+            color: red;
+        }
+
+        .blue-text {
+            color: blue;
+        }
+    </style>
 </head>
 <body>
     <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
@@ -12,36 +39,31 @@
                 <h1 class="card-title">Formulário de Carros</h1>
 
                 <!-- Um único formulário para ambos os carros -->
-                <form action="/submit-form" method="post">
+                <form action="/analisar-comparativo" method="post">
                     <!-- Seção para o primeiro carro -->
                     <h2>Carro 1</h2>
                     <div class="form-group">
                         <label for="carModel1">Modelo do Carro 1:</label>
                         <select name="carModel1" id="carModel1" class="form-control">
                             <!-- Opções de modelo de carro -->
-                            <option value="modelo1">Modelo 1</option>
-                            <option value="modelo2">Modelo 2</option>
+                            <option value="Fiat">Fiat</option>
                             <!-- Adicione mais opções conforme necessário -->
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="carName1">Nome do Carro 1:</label>
-                        <select name="carName1" id="carName1" class="form-control">
-                            <!-- Opções de nome de carro -->
-                            <option value="nome1">Nome 1</option>
-                            <option value="nome2">Nome 2</option>
-                            <!-- Adicione mais opções conforme necessário -->
+                        <label for="modelo1">Nome do Carro 1:</label>
+                        <select name="modelo1" id="modelo1" class="form-control" onchange="updateCarYearModel(this.value, 1)">
+                            {% for modelo in modelos %}
+                            <option value="{{ modelo }}">{{ modelo }}</option>
+                            {% endfor %}
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="carYear1">Ano do Modelo 1:</label>
-                        <select name="carYear1" id="carYear1" class="form-control">
-                            <!-- Opções de ano do modelo -->
-                            <option value="2020">2020</option>
-                            <option value="2021">2021</option>
-                            <!-- Adicione mais opções conforme necessário -->
+                        <label for="ano_modelo1">Ano do Modelo 1:</label>
+                        <select name="ano_modelo1" id="ano_modelo1" class="form-control">
+                            <option value=""></option>
                         </select>
                     </div>
 
@@ -53,30 +75,23 @@
                     <div class="form-group">
                         <label for="carModel2">Modelo do Carro 2:</label>
                         <select name="carModel2" id="carModel2" class="form-control">
-                            <!-- Opções de modelo de carro -->
-                            <option value="modelo1">Modelo 1</option>
-                            <option value="modelo2">Modelo 2</option>
-                            <!-- Adicione mais opções conforme necessário -->
+                            <option value="Fiat">Fiat</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="carName2">Nome do Carro 2:</label>
-                        <select name="carName2" id="carName2" class="form-control">
-                            <!-- Opções de nome de carro -->
-                            <option value="nome1">Nome 1</option>
-                            <option value="nome2">Nome 2</option>
-                            <!-- Adicione mais opções conforme necessário -->
+                        <label for="modelo2">Nome do Carro 2:</label>
+                        <select name="modelo2" id="modelo2" class="form-control" onchange="updateCarYearModel(this.value, 2)">
+                            {% for modelo in modelos %}
+                            <option value="{{ modelo }}">{{ modelo }}</option>
+                            {% endfor %}
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="carYear2">Ano do Modelo 2:</label>
-                        <select name="carYear2" id="carYear2" class="form-control">
-                            <!-- Opções de ano do modelo -->
-                            <option value="2020">2020</option>
-                            <option value="2021">2021</option>
-                            <!-- Adicione mais opções conforme necessário -->
+                        <label for="ano_modelo2">Ano do Modelo 2:</label>
+                        <select name="ano_modelo2" id="ano_modelo2" class="form-control">
+                            <option value=""></option>
                         </select>
                     </div>
 
@@ -87,5 +102,7 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript" src="static/script.js"></script>
 </body>
 </html>

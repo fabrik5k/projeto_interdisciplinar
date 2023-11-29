@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Comparativa</title>
+    <link rel="stylesheet" href="static/bootstrap.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Análise de Valor dos Carros</h1>
+
+        <div class="row">
+            <div class="col-md-12">
+                <img src="data:image/png;base64,{{ image_base64 }}" alt="Gráfico de Análise" class="img-fluid">
+            </div>
+        </div>
+
+        <h2 class="text-center">Carro 1</h2>
+        <div class="row">
+             <div class="row">
+            <!-- Caixa de Texto: Valor Atual -->
+                <div class="col-md-4 box">
+                    <div class="form-group">
+                        <label for="valorAtual">Valor Atual do Carro</label>
+                        <span class="input-style" id="valorAtual">
+                            R$ {{ preco_final[0] }}
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Caixa de Texto: Previsão do Próximo Mês -->
+                <div class="col-md-4 box">
+                    <div class="form-group">
+                        <label for="previsaoValor">Previsão do Valor para o Próximo Mês</label>
+                        <span class="input-style" id="previsaoValor">
+                            R$ {{ previsao[0] }}
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Caixa de Texto: Tendência de Valorização -->
+                <div class="col-md-4 box">
+                    <div class="form-group">
+                        <label for="tendenciaValorizacao">Tendência de Valorização (%)</label>
+                        <span class="input-style {{ 'red-text' if tendencia_porcentagem[0] < 0 else 'blue-text' }}" id="tendenciaValorizacao">
+                            {{ '{:.2f}'.format(tendencia_porcentagem[0]) }}%
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="text-center">Carro 2</h2>
+        <div class="row">
+             <div class="row">
+                <div class="col-md-4 box">
+                    <div class="form-group">
+                        <label for="valorAtual2">Valor Atual do Carro</label>
+                        <span class="input-style" id="valorAtual2">
+                            R$ {{ preco_final[1] }}
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Caixa de Texto: Previsão do Próximo Mês -->
+                <div class="col-md-4 box">
+                    <div class="form-group">
+                        <label for="previsaoValor2">Previsão do Valor para o Próximo Mês</label>
+                        <span class="input-style" id="previsaoValor2">
+                            R$ {{ previsao[1] }}
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Caixa de Texto: Tendência de Valorização -->
+                <div class="col-md-4 box">
+                    <div class="form-group">
+                        <label for="tendenciaValorizacao2">Tendência de Valorização (%)</label>
+                        <span class="input-style {{ 'red-text' if tendencia_porcentagem[1] < 0 else 'blue-text' }}" id="tendenciaValorizacao2">
+                            {{ '{:.2f}'.format(tendencia_porcentagem[1]) }}%
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
